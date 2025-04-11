@@ -1,6 +1,9 @@
 
+#### Criando projeto Stoque Next Prisma Typescript
 
-#### Criando projeto
+<img src="./screens/home.png" alt="" />
+<img src="./screens/products.png" alt="" />
+<img src="./screens/vendas0.png" alt="" />
 
 ```
 npx create-next-app@14.2.10 tdw-stockly
@@ -16,7 +19,3 @@ npx shadcn@2.0.6 init
 npx shadcn@2.0.6 add button
 ```
 
-* link
-```
-https://alunos.fullstackclub.com.br/area/produto/item/3815775
-```
