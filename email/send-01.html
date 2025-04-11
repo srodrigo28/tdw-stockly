@@ -1,0 +1,89 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enviar E-mail</title>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("YOUR_USER_ID"); // Substitua pelo seu User ID do EmailJS
+            })();
+        </script>
+    </head>
+
+    <body>
+        <h1>Envie um E-mail</h1>
+        <form id="form">
+            <div class="field">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="field">
+                <label for="title">Titulo do e-mail</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="field">
+                <label for="email">Copo do email</label>
+                <input type="text" name="email" id="email">
+            </div>
+
+            <input type="submit" id="button" value="Enviar Email">
+        </form>
+
+        <style>
+            .field {
+                margin-bottom: 10px;
+            }
+
+            .field label {
+                display: block;
+                font-size: 12px;
+                color: #777;
+            }
+
+            .field input {
+                display: block;
+                min-width: 250px;
+                line-height: 1.5;
+                font-size: 14px;
+            }
+
+            input[type="submit"] {
+                display: block;
+                padding: 6px 30px;
+                font-size: 14px;
+                background-color: #4460AA;
+                color: #fff;
+                border: none
+            }
+        </style>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript"> emailjs.init('tZl0aIOYrLNb4mZaa') </script>
+
+        <script>
+            const btn = document.getElementById('button');
+
+            document.getElementById('form')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    btn.value = 'Enviando';
+
+                    const serviceID = 'default_service';
+                    const templateID = 'template_pkd2tsm';
+
+                    emailjs.sendForm(serviceID, templateID, this)
+                        .then(() => {
+                            btn.value = 'Enviado com sucesso';
+                            alert('Enviado com sucesso');
+                        }, (err) => {
+                            btn.value = 'Send Email';
+                            alert(JSON.stringify(err));
+                        });
+                });
+        </script>
+    </body>
+    </html>
